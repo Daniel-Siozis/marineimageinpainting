@@ -1,6 +1,7 @@
 import numpy as np
 import streamlit as st
 from PIL import Image
+from tensorflow.keras.models import load_model
  
 # CSS für den animierten Hintergrund und spezifische Stile
 page_bg_img = """
@@ -73,6 +74,21 @@ st.markdown('<div class="info-box">Information! Es dürfen nur Bilder verwendet 
 st.write("")
 # Datei hochladen
 uploaded_file = st.file_uploader("Laden Sie hier Ihre Fischbilder hoch!", type=["png", "jpg", "jpeg"])
+
+# Lade das trainierte Modell
+model = load_model('trained_model.h5')
+
+# Funktion zur Reparatur des Bildes
+def repair_image(image):
+    # Vorverarbeitung des Bildes
+    image = np.array(image)
+    image = image / 255.0 # Normalisierung auf den Bereich [0, 1]
+    
+    # Vorhersage mit dem Modell
+    predicted_image = model.predict(np.expand_dims(image, axis=0))
+    predicted_image = (predicted_image * 255).astype(np.uint8) # Rückkehr zum urpsrünglichen Bereich [0, 255]
+    
+    return predicted_image
  
 # Wenn eine Datei hochgeladen wurde
 if uploaded_file is not None:
