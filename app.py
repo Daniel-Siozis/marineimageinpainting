@@ -86,6 +86,9 @@ def repair_image(image):
     
     # Vorhersage mit dem Modell
     predicted_image = model.predict(np.expand_dims(image, axis=0))
+
+    # Nachverarbeitung des reparierten Bildes
+    predicted_image = np.squeeze(predicted_image, axis=0)
     predicted_image = (predicted_image * 255).astype(np.uint8) # Rückkehr zum urpsrünglichen Bereich [0, 255]
     
     return predicted_image
