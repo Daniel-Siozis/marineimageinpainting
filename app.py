@@ -1,6 +1,8 @@
 import numpy as np
 import streamlit as st
+import tensorflow as tf
 from PIL import Image
+from PIL import _imaging
 from tensorflow.keras.models import load_model
  
 # CSS für den animierten Hintergrund und spezifische Stile
