@@ -1,6 +1,6 @@
 # DeepFish
 
-Muriz Ganic (it78iwat/23215741), Daniel Siozis (ha04giji/23171488), Berkan Türkel (yb57ogox/22833043), Samuel Arapoglu (/) 
+Muriz Ganic (it78iwat/23215741), Daniel Siozis (ha04giji/23171488), Berkan Türkel (yb57ogox/22833043), Samuel Arapoglu (os78odaz/23198175) 
 
 ## 1 Introduction
 
