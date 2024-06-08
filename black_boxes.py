@@ -23,8 +23,8 @@ def add_black_box_to_images(input_dir, output_dir):
             image_width, image_height = image.size
             
             # Generiere zufällige Größe für den schwarzen Kasten
-            box_width = random.randint(10, image_width // 2)
-            box_height = random.randint(10, image_height // 2)
+            box_width = random.randint(2, image_width // 4)
+            box_height = random.randint(2, image_height // 4)
             
             # Generiere zufällige Position für den schwarzen Kasten
             box_left = random.randint(0, image_width - box_width)
