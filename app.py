@@ -2,7 +2,7 @@ import numpy as np
 import streamlit as st
 from PIL import Image
 from tensorflow.keras.models import load_model
- 
+
 # CSS für den animierten Hintergrund und spezifische Stile
 page_bg_img = """
 <style>
@@ -12,23 +12,23 @@ page_bg_img = """
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
- 
+
 [data-testid="stHeader"] {
     background-color: rgba(0, 0, 0, 0);
 }
- 
+
 h1, h2, h3, h4, h5, h6 {
     color: #FFFFFF;
 }
- 
+
 .st-markdown {
     color: #FFFFFF;
 }
- 
+
 [data-testid="stText"] {
     color: #FFFFFF;
 }
- 
+
 .head {
     font-family: 'Lato', sans-serif;
     color: #000;
@@ -42,14 +42,14 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;      /* Volle Breite */
     z-index: 1000;    /* Über anderen Elementen */
 }
- 
+
 .info-box {
     background-color: #FA0707;
     color: #FFFFFF;
     border-radius: 5px;
     padding: 10px;
 }
- 
+
 .fische {
     background-color: #912424;
     color: #FFFFFF;
@@ -58,10 +58,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 </style>
 """
- 
+
 # Einfügen des CSS in die Streamlit-App
 st.markdown(page_bg_img, unsafe_allow_html=True)
- 
+
 # Streamlit-Anwendung
 st.markdown('<div class="head"><h4>Sehen Sie zu wie sich ihr Bild eigenständig reparieren lässt!</h4></div>', unsafe_allow_html=True)
 st.write("")
@@ -79,33 +79,39 @@ uploaded_file = st.file_uploader("Laden Sie hier Ihre Fischbilder hoch!", type=[
 model = load_model('trained_model.h5')
 
 # Funktion zur Reparatur des Bildes
-def repair_image(image):
+def repair_image(image, target_size=(64, 64)):
+    # Originalbildgröße speichern
+    original_size = image.size
+    
     # Vorverarbeitung des Bildes
-    image = np.array(image)
-    image = image / 255.0 # Normalisierung auf den Bereich [0, 1]
+    image = image.resize(target_size)  # Bild auf Modellgröße skalieren
+    image_array = np.array(image) / 255.0  # Normalisierung auf den Bereich [0, 1]
     
     # Vorhersage mit dem Modell
-    predicted_image = model.predict(np.expand_dims(image, axis=0))
-
+    predicted_image = model.predict(np.expand_dims(image_array, axis=0))
+    
     # Nachverarbeitung des reparierten Bildes
     predicted_image = np.squeeze(predicted_image, axis=0)
-    predicted_image = (predicted_image * 255).astype(np.uint8) # Rückkehr zum urpsrünglichen Bereich [0, 255]
+    predicted_image = (predicted_image * 255).astype(np.uint8)  # Rückkehr zum ursprünglichen Bereich [0, 255]
+    predicted_image = Image.fromarray(predicted_image)
+    
+    # Bild auf ursprüngliche Größe zurückskalieren
+    predicted_image = predicted_image.resize(original_size)
     
     return predicted_image
- 
+
 # Wenn eine Datei hochgeladen wurde
 if uploaded_file is not None:
-
     # Zeige das hochgeladene Bild an
     st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
- 
+    
     # Repariere das Bild, wenn der Benutzer auf die Schaltfläche klickt
     if st.button('Reparieren'):
         # Öffne das hochgeladene Bild
         image = Image.open(uploaded_file)
- 
+        
         # Repariere das Bild
         repaired_image = repair_image(image)
- 
+        
         # Zeige das reparierte Bild an
         st.image(repaired_image, caption='Repariertes Bild', use_column_width=True)
