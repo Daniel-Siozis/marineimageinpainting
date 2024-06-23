@@ -158,11 +158,20 @@ if page!="Über uns" and uploaded_file is not None:
 
 
 if page == "Bild reparieren":
+    # Wenn eine Datei hochgeladen wurde
     if uploaded_file is not None:
+        # Zeige das hochgeladene Bild an
         st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
+
+        # Repariere das Bild, wenn der Benutzer auf die Schaltfläche klickt
         if st.button('Reparieren'):
+            # Öffne das hochgeladene Bild
             image = Image.open(uploaded_file)
+            
+            # Repariere das Bild
             repaired_image = repair_image(image)
+            
+            # Zeige das reparierte Bild an
             st.image(repaired_image, caption='Repariertes Bild', use_column_width=True)
 
 elif page == "Dokumentation":
