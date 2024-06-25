@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 st.sidebar.title("Menü")
-page = st.sidebar.radio("Selection-Screen", ["Hauptmenü", "Dokumentation", "Beispiel", "Über uns"])
+page = st.sidebar.radio("Selection-Screen", ["Hauptmenü", "Dokumentation", "Über uns"])
 
 
 # Leere Sidebar, um sicherzustellen, dass die Sidebar sichtbar ist
@@ -184,19 +184,7 @@ if page == "Bild reparieren":
 elif page == "Dokumentation":
     st.write("Hier können weitere Unterpunkte hinzugefügt werden.")
 
-elif page == "Beispiel":
-    # Beispielbilder laden (entweder lokal oder von einer URL)
-    example_images = [
-        ("Beispielbild 1", "Dataset/example/broken1-valid.jpg", "Dataset/example/1-valid.jpg"),
-        
-    ]
-    
-    for title, original, repaired in example_images:
-        st.markdown('<div class="example">Hier sehen Sie wie es funktionieren kann</div>', unsafe_allow_html=True)
-        st.write(title)
-        st.image(original, caption='Originalbild', use_column_width=True)
-        st.image(repaired, caption='Repariertes Bild', use_column_width=True)
-        st.write("")
+
 
 elif page == "Über uns":
     st.title("Über uns")
