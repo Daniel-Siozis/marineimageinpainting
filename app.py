@@ -176,7 +176,13 @@ if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
         repaired_image = repair_image(image)
         
         # Zeige das reparierte Bild an
-        st.image(repaired_image, caption='Repariertes Bild', use_column_width=False, width=350)
+        col1, col2 = st.beta_columns(2)
+col1.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
+if col2.button('Reparieren'):
+    image = Image.open(uploaded_file)
+    repaired_image = repair_image(image)
+    col2.image(repaired_image, caption='Repariertes Bild', use_column_width=True)
+
 
 
 if page == "Bild reparieren":
