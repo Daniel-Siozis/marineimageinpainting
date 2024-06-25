@@ -58,6 +58,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     border-radius: 5px;
 }
+ img{
+    position: relative;
+    left: 50%;
+}
 
 /* Sidebar-Styling */
 [data-testid="stSidebar"] {
