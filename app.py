@@ -187,7 +187,22 @@ if page == "Bild reparieren":
 elif page == "Dokumentation":
     st.title("Dokumentation")
     st.subheader("Model")
-    st.write("Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.")
+    box_style = """
+    <style>
+    .box {
+        background-color: #f9f9f9;
+        border: solid #ddd;
+        padding: 10px;
+        border-radius: 1px;
+        margin-bottom: 10px;
+    }
+    .box h3{
+    color: #000000; }
+    </style>
+    """
+    st.markdown(box_style, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="box">Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.")</p></div> """, unsafe_allow_html=True)
 
 
 
