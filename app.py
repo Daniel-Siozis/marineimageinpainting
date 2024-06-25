@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 [data-testid="stSidebar"] .st-emotion-cache-1pbsqtx{
  color:  #Ffffff;
 }
-[data-testid="stSidebar"] .css-16idsys p{
+[data-testid="stFileUploader"] .css-16idsys p{
   color:  #Ffffff;
 }
 [data-testid="stSidebar"] .st-cg{
