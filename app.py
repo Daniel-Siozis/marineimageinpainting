@@ -118,7 +118,7 @@ if page != "Über uns":
     st.write("")
     uploaded_file = st.file_uploader("Laden Sie hier Ihre Fischbilder hoch!", type=["png", "jpg", "jpeg"])
 
-model = load_model('trained_model.h5')
+model = load_model('inpainting_64x64_model.h5')
 def repair_image(image, target_size=(64, 64)):
     # Originalbildgröße speichern
     original_size = image.size
