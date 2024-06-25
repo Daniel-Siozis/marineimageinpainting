@@ -101,6 +101,9 @@ h1, h2, h3, h4, h5, h6 {
 [data-testid="stSidebar"] .st-emotion-cache-ue6h4q{
  color: #262527;
 }
+[data-testid="stSidebar"] .css-fblp2m{
+ color: #FFFFFF;
+}
 
 [data-testid="stSidebar"] .css-1l0t84s {
     color: #FF0000;
