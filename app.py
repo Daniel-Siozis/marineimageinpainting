@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
  color: #262527;
 }
 [data-testid="stSidebar"] .css-fblp2m{
- color: #FFFFFF;
+ color: #Ffffff;
 }
 
 [data-testid="stSidebar"] .css-1l0t84s {
