@@ -203,6 +203,9 @@ elif page == "Dokumentation":
     st.markdown("""
     <div class="box"><h3>1. Model</h3>Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.")</p></div> """, unsafe_allow_html=True)
     st.markdown("""
+    <div class="box"><h3>2. Training</h3>Kommt noch</p></div> """, unsafe_allow_html=True)
+
+    st.markdown("""
     <div class="box"><h3>3. Limitations</h3>One significant limitation we encountered was hardware constraints, particularly with GPU memory (VRAM) and RAM. This limitation restricted our ability to process high-resolution images, necessitating the downscaling of our underwater images to 64x64 pixels</p></div> """, unsafe_allow_html=True)
 
 
