@@ -157,7 +157,7 @@ def repair_image(image, target_size=(64, 64)):
     return predicted_image
 
 # Wenn eine Datei hochgeladen wurde
-if page!="Über uns" and uploaded_file is not None:
+if page!="Über uns" or page!="Dokumentation" and uploaded_file is not None:
     # Zeige das hochgeladene Bild an
     st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
     
@@ -219,7 +219,7 @@ elif page == "Über uns":
     <div class="box">
         <h3>Samuel Arapoglu</h3>
         <p>Webentwicklung</p>
-        <p><strong>Persona:</strong> Durch meine Position als Werkstudent in der Energiewirtschaft habe ich neben der Tätigkeit als SAP ABAP Entwickler die Möglichekit bei der Implementierung eines internen GPT Modells 
+        <p><strong>Persona:</strong> Durch meine Position als Werkstudent in der Energiewirtschaft habe ich neben der Tätigkeit als SAP ABAP Entwickler die Möglichkeit bei der Implementierung eines internen GPT Modells 
             mitzuwirken. KI kann dadurch wichtige Daten vor Dritten schützen.
    </p>
     </div>
