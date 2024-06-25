@@ -157,7 +157,7 @@ def repair_image(image, target_size=(64, 64)):
     return predicted_image
 
 # Wenn eine Datei hochgeladen wurde
-if page!="Über uns" and uploaded_file is not None:
+if page!="Über uns" or "Dokumentation" and uploaded_file is not None:
     # Zeige das hochgeladene Bild an
     st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
     
