@@ -206,7 +206,8 @@ elif page == "Dokumentation":
     st.markdown("""
     <div class="box"><h3>1. Model</h3>Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.</p></div> """, unsafe_allow_html=True)
     st.markdown("""
-    <div class="box"><h3>2. Training</h3>- Training via Tensorflow
+    <div class="box"><h3>2. Training</h3>-Training via Tensorflow
+                
 - Da wir unter anderem Zugriff auf eine RTX 3090 Ti Grafikkarte hatten, konnten wir das Training auch via CUDA durchführen, was uns generell viel Zeit erspart hat. Auch haben wir einen Stopp eingebaut, der das Training bereits vorher beendet hat, sobald das Modell keine brauchbaren Fortschritte nach einer vorher definierten Anzahl an Epochen erzielt hatte, sodass das Training zwischen 20-60 Minuten benötigt hat.
 - Auf Grund von der Hardware-Restriktion (vor allem bei der VRAM und RAM), mussten wir die Bilder vor dem eigentlichen Training noch runterskalieren auf 64x64
 - Beim Training selber, wurde das Modell mit Hilfe der validen (nicht kaputten) Bildern und kaputten Bildern (also mit den schwarzen Kästchen) trainiert.</p></div> """, unsafe_allow_html=True)
