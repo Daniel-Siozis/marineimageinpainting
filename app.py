@@ -122,7 +122,7 @@ page = st.sidebar.radio("Selection-Screen", ["Hauptmenü", "Dokumentation", "Üb
 # Leere Sidebar, um sicherzustellen, dass die Sidebar sichtbar ist
 st.sidebar.empty()
 # Dann fügen wir den eigentlichen Inhalt hinzu
-if page != "Über uns":
+if page != "Über uns" and page!="Dokumentation":
     st.markdown('<div class="head"><h4>Sehen Sie zu wie sich ihr Bild eigenständig reparieren lässt!</h4></div>', unsafe_allow_html=True)
     st.write("")
     st.write("")
@@ -157,7 +157,7 @@ def repair_image(image, target_size=(64, 64)):
     return predicted_image
 
 # Wenn eine Datei hochgeladen wurde
-if page!="Über uns" or page!="Dokumentation" and uploaded_file is not None:
+if page!="Über uns" and uploaded_file is not None:
     # Zeige das hochgeladene Bild an
     st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
     
