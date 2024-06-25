@@ -120,6 +120,9 @@ h1, h2, h3, h4, h5, h6 {
 [data-testid="stSidebar"] .css-1cpxqw2 {
     color: #FF0000;
 }
+
+.caption {
+color: #FFFFFF}
 </style>
 """
 
@@ -142,6 +145,7 @@ if page != "Über uns" and page!="Dokumentation":
     st.markdown('<div class="info-box">Information! Es dürfen nur Bilder verwendet werden, die unter Wasser aufgenommen wurden.</div>', unsafe_allow_html=True)
     st.write("")
     uploaded_file = st.file_uploader("Laden Sie hier Ihre Fischbilder hoch!", type=["png", "jpg", "jpeg"])
+    st.markdown('<p class="caption">Laden Sie hier Ihre Fischbilder hoch!</p>', unsafe_allow_html=True)
 
 model = load_model('inpainting_64x64_model.h5')
 def repair_image(image, target_size=(64, 64)):
