@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 st.sidebar.title("Menü")
-page = st.sidebar.radio("Selection-Screen", ["Hauptmenü", "Dokumentation", "Über uns"])
+page = st.sidebar.radio("Selection-Screen", ["Startseite", "Dokumentation", "Über uns"])
 
 
 # Leere Sidebar, um sicherzustellen, dass die Sidebar sichtbar ist
