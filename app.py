@@ -58,10 +58,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     border-radius: 5px;
 }
- img{
-    position: relative;
-    left: 50%;
-}
 
 /* Sidebar-Styling */
 [data-testid="stSidebar"] {
@@ -185,14 +181,6 @@ if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
         # Zeige das reparierte Bild an
         st.image(repaired_image, caption='Repariertes Bild', use_column_width=False, width=350)
 
-
-if page == "Bild reparieren":
-    if uploaded_file is not None:
-        st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
-        if st.button('Reparieren'):
-            image = Image.open(uploaded_file)
-            repaired_image = repair_image(image)
-            st.image(repaired_image, caption='Repariertes Bild', use_column_width=True)
 
 elif page == "Dokumentation":
     st.title("Dokumentation")
