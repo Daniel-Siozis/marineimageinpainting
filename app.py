@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background-image: url("https://www.bing.com/th/id/OGC.081f8cd08585e1040a8393c25b274126?pid=1.7&rurl=https%3a%2f%2fgiffiles.alphacoders.com%2f195%2f19516.gif&ehk=prgnSylokkfl0aH%2bDLaEqgHzeySBwEUCF8DG8yQCes8%3d");
+    background-image: url("https://media.giphy.com/media/zvCG9M91fwjCgsdB70/giphy.gif?cid=790b7611i6a6xemzy77p4375hnvxo0r6g56z8s7raz8phfc6&ep=v1_gifs_search&rid=giphy.gif&ct=g");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -118,7 +118,7 @@ if page != "Über uns":
     st.write("")
     uploaded_file = st.file_uploader("Laden Sie hier Ihre Fischbilder hoch!", type=["png", "jpg", "jpeg"])
 
-model = load_model('inpainting_64x64_model.h5')
+model = load_model('trained_model.h5')
 def repair_image(image, target_size=(64, 64)):
     # Originalbildgröße speichern
     original_size = image.size
@@ -158,20 +158,11 @@ if page!="Über uns" and uploaded_file is not None:
 
 
 if page == "Bild reparieren":
-    # Wenn eine Datei hochgeladen wurde
     if uploaded_file is not None:
-        # Zeige das hochgeladene Bild an
         st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
-
-        # Repariere das Bild, wenn der Benutzer auf die Schaltfläche klickt
         if st.button('Reparieren'):
-            # Öffne das hochgeladene Bild
             image = Image.open(uploaded_file)
-            
-            # Repariere das Bild
             repaired_image = repair_image(image)
-            
-            # Zeige das reparierte Bild an
             st.image(repaired_image, caption='Repariertes Bild', use_column_width=True)
 
 elif page == "Dokumentation":
@@ -214,7 +205,7 @@ elif page == "Über uns":
     st.markdown("""
     <div class="box">
         <h3>Daniel Siozis</h3>
-        <p>Modell Entwicklung</p>
+        <p>Modell-Entwicklung</p>
         <p><strong>Persona:</strong> Durch die Automatisierung komplexer Aufgaben kann KI die Effizienz und Produktivität in verschiedensten Branchen, von der Medizin bis zur Automobilindustrie, enorm steigern.
                 Durch die Automatisierung komplexer Aufgaben kann KI die Effizienz und Produktivität in verschiedensten Branchen, von der Medizin bis zur Automobilindustrie, enorm steigern.
             Durch die enorme und schnelle Datenverarbeitung werden auch schnell neue Erkenntnisse gewonnen, die überall neue Erfolge erzielen könnten.
@@ -231,6 +222,24 @@ elif page == "Über uns":
    </p>
     </div>
     """, unsafe_allow_html=True)
+    st.markdown("""
+     <div class="box">
+        <h3>Berkan Türkel</h3>
+        <p>Hardwarebereitstellung & Modelltraining</p>
+        <p><strong>Persona:</strong> Künstliche Intelligenz ermöglicht die effiziente Analyse großer Datenmengen und die Lösung komplexer Probleme. In Bereichen wie Medizin und Umwelt eröffnet sie neue Perspektiven und optimiert Prozesse. Dadurch trägt sie maßgeblich zu einer intelligenteren und nachhaltigeren Zukunft bei.</p>
+    </div>
+        """, unsafe_allow_html=True)
+    st.markdown("""
+     <div class="box">
+        <h3>Muriz Ganic</h3>
+        <p>Modelltraining</p>
+        <p><strong>Persona:</strong> Künstliche Intelligenz ist nicht nur Technologie, sondern der Schlüssel, um die komplexesten Herausforderungen unserer Zeit zu lösen. Durch ihre Fähigkeit, immense Datenmengen in kürzester Zeit zu verarbeiten, eröffnet sie neue Möglichkeiten in Medizin, Umweltwissenschaften und vielen anderen Bereichen. 
+                KI hilft uns, effizientere Lösungen zu finden, die unseren Alltag nachhaltiger und intelligenter gestalten.</p>
+    </div>
+        """, unsafe_allow_html=True)
+    
+    
+  
     # Optional: Hinzufügen von Abständen für eine bessere Lesbarkeit
     st.markdown("---")
     
