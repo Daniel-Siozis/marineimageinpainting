@@ -162,7 +162,7 @@ def repair_image(image, target_size=(64, 64)):
 # Wenn eine Datei hochgeladen wurde
 if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
     # Zeige das hochgeladene Bild an
-    st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True)
+    st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=True, width=300)
     
     # Repariere das Bild, wenn der Benutzer auf die Schaltfläche klickt
     if st.button('Reparieren'):
