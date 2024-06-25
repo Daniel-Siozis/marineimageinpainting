@@ -208,7 +208,7 @@ elif page == "Dokumentation":
     st.markdown("""
     <div class="box"><h3>2. Training</h3>Wir haben unser Modell mit TensorFlow trainiert und konnten dank der Nutzung einer RTX-GPU von Nvidia viel Zeit durch CUDA ersparen. Auch wurde eine Stopp-Kondition implementiert, die das Training vorzeitig beendet hat, wenn nach einer bestimmten Anzahl an Epochen keine Fortschritte mehr erzielt wurden, sodass das Training durchschnittlich 20-60 Minuten dauerte. Das Modell wurde mit validen und beschädigten Bildern trainiert.</p></div> """, unsafe_allow_html=True)
     st.markdown("""
-    <div class="box"><h3>3. Einschränkungen</h3>Eine wesentliche Einschränkung, auf die wir gestoßen sind, waren hardwarebedingt, insbesondere beim GPU-Speicher (VRAM) und RAM. Dies schränkte unsere Fähigkeit ein, hochauflösende Bilder zu verarbeiten, was eine Herunterskalierung unserer Trainingsbilder auf 64x64 Pixel erforderlich machte.</p></div> """, unsafe_allow_html=True)
+    <div class="box"><h3>3. Einschränkungen</h3>Eine wesentliche Einschränkung auf die wir gestoßen sind, war hardwarebedingt, insbesondere beim GPU-Speicher (VRAM) und RAM. Dies schränkte unsere Fähigkeit ein, hochauflösende Bilder zu verarbeiten, was eine Herunterskalierung unserer Trainingsbilder auf 64x64 Pixel erforderlich machte.</p></div> """, unsafe_allow_html=True)
 
 
 
