@@ -171,7 +171,7 @@ def repair_image(image, target_size=(64, 64)):
 # Wenn eine Datei hochgeladen wurde
 if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
     # Zeige das hochgeladene Bild an
-    st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=False, width=350)
+    st.image(uploaded_file, use_column_width=False, width=350)
     st.markdown('<p class="caption">Hochgeladenes Bild</p>', unsafe_allow_html=True)
     
     # Repariere das Bild, wenn der Benutzer auf die Schaltfläche klickt
@@ -183,7 +183,7 @@ if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
         repaired_image = repair_image(image)
         
         # Zeige das reparierte Bild an
-        st.image(repaired_image, caption='Repariertes Bild', use_column_width=False, width=350)
+        st.image(repaired_image, use_column_width=False, width=350)
         st.markdown('<p class="caption">Repariertes Bild</p>', unsafe_allow_html=True)
 
 
