@@ -186,7 +186,6 @@ if page == "Bild reparieren":
 
 elif page == "Dokumentation":
     st.title("Dokumentation")
-    st.subheader("Model")
     box_style = """
     <style>
     .box {
@@ -201,6 +200,8 @@ elif page == "Dokumentation":
     </style>
     """
     st.markdown(box_style, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="box"><h3>Model</h3>Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.")</p></div> """, unsafe_allow_html=True)
     st.markdown("""
     <div class="box"><h3>Model</h3>Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.")</p></div> """, unsafe_allow_html=True)
 
