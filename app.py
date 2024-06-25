@@ -145,7 +145,6 @@ if page != "Über uns" and page!="Dokumentation":
     st.markdown('<div class="info-box">Information! Es dürfen nur Bilder verwendet werden, die unter Wasser aufgenommen wurden.</div>', unsafe_allow_html=True)
     st.write("")
     uploaded_file = st.file_uploader("Laden Sie hier Ihre Fischbilder hoch!", type=["png", "jpg", "jpeg"])
-    st.markdown('<p class="caption">Laden Sie hier Ihre Fischbilder hoch!</p>', unsafe_allow_html=True)
 
 model = load_model('inpainting_64x64_model.h5')
 def repair_image(image, target_size=(64, 64)):
@@ -173,6 +172,7 @@ def repair_image(image, target_size=(64, 64)):
 if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
     # Zeige das hochgeladene Bild an
     st.image(uploaded_file, caption='Hochgeladenes Bild', use_column_width=False, width=350)
+    st.markdown('<p class="caption">Hochgeladenes Bild</p>', unsafe_allow_html=True)
     
     # Repariere das Bild, wenn der Benutzer auf die Schaltfläche klickt
     if st.button('Reparieren'):
@@ -184,6 +184,7 @@ if page!="Über uns" and page!="Dokumentation" and uploaded_file is not None:
         
         # Zeige das reparierte Bild an
         st.image(repaired_image, caption='Repariertes Bild', use_column_width=False, width=350)
+        st.markdown('<p class="caption">Repariertes Bild</p>', unsafe_allow_html=True)
 
 
 elif page == "Dokumentation":
