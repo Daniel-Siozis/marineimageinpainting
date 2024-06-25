@@ -64,6 +64,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #262527;
     width: 10% !important;
 }
+[data-testid="stSidebar"] .css-16idsys{
+  color: #AE27B7 !important;
+}
 
 
 [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] h5, [data-testid="stSidebar"] h6 {
