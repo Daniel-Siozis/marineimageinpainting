@@ -187,7 +187,7 @@ elif page == "Dokumentation":
 elif page == "Beispiel":
     # Beispielbilder laden (entweder lokal oder von einer URL)
     example_images = [
-        ("Beispielbild 1", "MarineInpaint/Bilder/oken/2-broken.jpg", "MarineInpaint/Bilder/original/7393_F2_f000000.jpg"),
+        ("Beispielbild 1", "Dataset/broken1-valid.jpg", "Dataset/1-valid.jpg"),
         
     ]
     
