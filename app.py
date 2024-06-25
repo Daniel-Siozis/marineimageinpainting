@@ -185,7 +185,9 @@ if page == "Bild reparieren":
             st.image(repaired_image, caption='Repariertes Bild', use_column_width=True)
 
 elif page == "Dokumentation":
-    st.write("Hier können weitere Unterpunkte hinzugefügt werden.")
+    st.title("Dokumentation")
+    st.subheader("Model")
+    st.write("Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.")
 
 
 
