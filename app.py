@@ -184,9 +184,7 @@ if page == "Bild reparieren":
 elif page == "Dokumentation":
     st.write("Hier können weitere Unterpunkte hinzugefügt werden.")
 
-elif page == "Examples":
-    
-    
+elif page == "Beispiel":
     # Beispielbilder laden (entweder lokal oder von einer URL)
     example_images = [
         ("Beispielbild 1", "MarineInpaint/Bilder/oken/1-broken.jpg", "MarineInpaint/Bilder/original/7393_F1_f000000.jpg"),
