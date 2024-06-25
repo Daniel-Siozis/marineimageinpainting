@@ -206,12 +206,7 @@ elif page == "Dokumentation":
     st.markdown("""
     <div class="box"><h3>1. Modell</h3>Wir haben ein einfaches CNN-Modell (Convolutional Neural Network) für unser Marinebild-Inpainting-Projekt verwendet. Das Modell besteht aus mehreren Faltungsschichten für die Merkmalsextraktion und einer transponierten Faltungsschicht für die Rekonstruktion der reparierten Bilder.</p></div> """, unsafe_allow_html=True)
     st.markdown("""
-    <div class="box"><h3>2. Training</h3>- Training via Tensorflow
-                
-- Da wir unter anderem Zugriff auf eine RTX 3090 Ti Grafikkarte hatten, konnten wir das Training auch via CUDA durchführen, was uns generell viel Zeit erspart hat. Auch haben wir einen Stopp eingebaut, der das Training bereits vorher beendet hat, sobald das Modell keine brauchbaren Fortschritte nach einer vorher definierten Anzahl an Epochen erzielt hatte, sodass das Training zwischen 20-60 Minuten benötigt hat.
-- Auf Grund von der Hardware-Restriktion (vor allem bei der VRAM und RAM), mussten wir die Bilder vor dem eigentlichen Training noch runterskalieren auf 64x64
-- Beim Training selber, wurde das Modell mit Hilfe der validen (nicht kaputten) Bildern und kaputten Bildern (also mit den schwarzen Kästchen) trainiert.</p></div> """, unsafe_allow_html=True)
-
+    <div class="box"><h3>2. Training</h3>Wir haben unser Modell mit TensorFlow trainiert und konnten dank der Nutzung einer RTX-GPU von Nvidia viel Zeit durch CUDA ersparen. Auch wurde eine Stopp-Kondition implementiert, die das Training vorzeitig beendet hat, wenn nach einer bestimmten Anzahl an Epochen keine Fortschritte mehr erzielt wurden, sodass das Training durchschnittlich 20-60 Minuten dauerte. Vor dem Training wurden die Bilder auf 64x64 runterskaliert. Das Modell wurde mit validen und beschädigten Bildern trainiert.</p></div> """, unsafe_allow_html=True)
     st.markdown("""
     <div class="box"><h3>3. Einschränkungen</h3>Eine wesentliche Einschränkung, auf die wir gestoßen sind, waren Hardwarebegrenzungen, insbesondere beim GPU-Speicher (VRAM) und RAM. Diese Einschränkung beschränkte unsere Fähigkeit, hochauflösende Bilder zu verarbeiten, und machte es erforderlich, unsere Unterwasserbilder auf 64x64 Pixel herunterzuskalieren.</p></div> """, unsafe_allow_html=True)
 
