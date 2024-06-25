@@ -5,6 +5,7 @@ from tensorflow.keras.layers import Conv2D, Input, Conv2DTranspose
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.optimizers import Nadam
 from tensorflow.keras.optimizers import Adamax
+from tensorflow.keras.callbacks import EarlyStopping
 import os
 from PIL import Image
 
@@ -17,11 +18,11 @@ def create_model():
     model.add(Conv2DTranspose(3, (3, 3), activation='relu', padding='same'))
     return model
 
-# Lade deine 10 Bilder und ihre beschädigten Versionen
+# Lade deine Bilder und ihre beschädigten Versionen
 def load_data(train_path, noisy_path):
     # Hier lädst du deine Bilder und ihre beschädigten Versionen
-    valid_images_paths = []  # Liste mit den 10 Bildern
-    broken_images_paths = []   # Liste mit den beschädigten Versionen der 10 Bilder
+    valid_images_paths = []  # Liste mit den Bildern
+    broken_images_paths = []   # Liste mit den beschädigten Versionen der Bilder
 
     counter = 0
     for filename in os.listdir(train_path):
@@ -60,8 +61,14 @@ def load_data(train_path, noisy_path):
 
 # Definiere den Modelltrainingsprozess
 def train_model(model, train_images, train_images_noisy):
+    # Auswahl zwischen den Optimizer Adam, Nadam und Adamax & Anpassung der learning_rate
     model.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
-    model.fit(train_images_noisy, train_images, epochs=30, batch_size=1)
+
+    # Anpassung der patience (5: nach 5 Epochen ohne Fortschritt beim 'loss' wird frühzeitig gestoppt)
+    early_stopping = EarlyStopping(monitor='loss', patience=5, restore_best_weights=True)
+
+    # Anpassung der epochs und batch_size
+    model.fit(train_images_noisy, train_images, epochs=30, batch_size=1, callbacks=[early_stopping])
 
 # Hauptfunktion zum Trainieren und Speichern des Modells
 def main():
