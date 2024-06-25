@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 [data-testid="stSidebar"] .st-emotion-cache-ue6h4q{
  color: #262527;
 }
-[data-testid="caption"] div.css-1b0udgb{
+[data-testid="caption"] .etr89bj0{
  color: #FFFFFF !important;
 }
 [data-testid="collapsedControl"] .css-fblp2m{
