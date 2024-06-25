@@ -28,7 +28,7 @@ def load_data(train_path, noisy_path):
         counter = counter + 1
         img_path = os.path.join(train_path, filename).replace("\\","/")
         valid_images_paths.append(img_path)
-        if counter == 13953:
+        if counter == 12000:
             break
     
     counter = 0
@@ -37,7 +37,7 @@ def load_data(train_path, noisy_path):
         counter = counter + 1
         img_path = os.path.join(noisy_path, filename).replace("\\","/")
         broken_images_paths.append(img_path)
-        if counter == 13953:
+        if counter == 12000:
             break
 
     valid_images = []
