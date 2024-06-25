@@ -208,7 +208,7 @@ elif page == "Dokumentation":
     st.markdown("""
     <div class="box"><h3>2. Training</h3>Wir haben unser Modell mit TensorFlow trainiert und konnten dank der Nutzung einer RTX-GPU von Nvidia viel Zeit durch CUDA ersparen. Auch wurde eine Stopp-Kondition implementiert, die das Training vorzeitig beendet hat, wenn nach einer bestimmten Anzahl an Epochen keine Fortschritte mehr erzielt wurden, sodass das Training durchschnittlich 20-60 Minuten dauerte. Das Modell wurde mit validen und beschädigten Bildern trainiert.</p></div> """, unsafe_allow_html=True)
     st.markdown("""
-    <div class="box"><h3>3. Einschränkungen</h3>Eine wesentliche Einschränkung auf die wir gestoßen sind, war hardwarebedingt, insbesondere beim GPU-Speicher (VRAM) und RAM. Dies schränkte unsere Fähigkeit ein, hochauflösende Bilder zu verarbeiten, was eine Herunterskalierung unserer Trainingsbilder auf 64x64 Pixel erforderlich machte.</p></div> """, unsafe_allow_html=True)
+    <div class="box"><h3>3. Einschränkungen</h3>Eine wesentliche Einschränkung auf die wir gestoßen sind, war bedingt, insbesondere beim GPU-Speicher (VRAM) und RAM. Dies schränkte unsere Fähigkeit ein, hochauflösende Bilder zu verarbeiten, was eine Herunterskalierung unserer Trainingsbilder auf 64x64 Pixel erforderlich machte.</p></div> """, unsafe_allow_html=True)
 
 
 
@@ -260,7 +260,7 @@ elif page == "Über uns":
     st.markdown("""
      <div class="box">
         <h3>Muriz Ganic</h3>
-        <p>Modelltraining</p>
+        <p>Dokumentation & Recherche</p>
         <p><strong>Persona:</strong> Künstliche Intelligenz ist nicht nur Technologie, sondern der Schlüssel, um die komplexesten Herausforderungen unserer Zeit zu lösen. Durch ihre Fähigkeit, immense Datenmengen in kürzester Zeit zu verarbeiten, eröffnet sie neue Möglichkeiten in Medizin, Umweltwissenschaften und vielen anderen Bereichen. 
                 KI hilft uns, effizientere Lösungen zu finden, die unseren Alltag nachhaltiger und intelligenter gestalten.</p>
     </div>
