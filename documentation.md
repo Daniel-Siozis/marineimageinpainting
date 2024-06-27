@@ -72,7 +72,6 @@ We trained our model using supervised learning with TensorFlow on our own hardwa
 ### 4.1 Artifacts 
 Model Architecture
 -	Convolutional Neural Network (CNN): We designed and implemented a CNN specifically tailored for image inpainting tasks.
-Datasets (stimmt das?)
 -	Training and Testing Datasets: We compiled a dataset of underwater images, including both clean images and their artificially damaged counterparts.
 Trained model
 -	Saved Model File: After training, we saved the trained model as ‘trained_model.h5‘.
